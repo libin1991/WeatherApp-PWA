@@ -4,7 +4,6 @@ var filesToCache = [
     './',
     './index.html',
     './manifest.json',
-    './favicon.ico',
     './assets/css/hello-world.css',
     './assets/icons/android-icon-48x48.png',
     './assets/icons/apple-icon-152x152.png',
