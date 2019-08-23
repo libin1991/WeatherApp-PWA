@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#eeeeee">
     <meta name="apple-mobile-web-app-status-bar-style" content="#eeeeee">
 
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="./manifest.json">
 
     <meta name="apple-mobile-web-app-title" content="React PWA">
     <meta name="application-name" content="React PWA">
@@ -35,7 +35,7 @@
       }
     </style>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
   </head>
 
   <body>
@@ -48,7 +48,7 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
-          navigator.serviceWorker.register('cache.js', { scope: '/' })
+          navigator.serviceWorker.register('./cache.js', { scope: '/' })
         })
       }
     </script>
