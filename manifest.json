@@ -1,21 +1,19 @@
 {
-    "short_name": "Webapproach React PWA",
-    "name": "Serverless React PWA on AWS",
-    "icons": [
-      {
-        "sizes": "192x192",
-        "src": "/images/icon-192x192.png",
-        "type": "image/png"
-      },
-      {
-        "sizes": "512x512",
-        "src": "/images/icon-512x512.png",
-        "type": "image/png"
-      }
-    ],
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#009688",
-    "scope": "/",
-    "theme_color": "#009688"
-  }
+  "short_name": "Webapproach React PWA",
+  "name": "Serverless React PWA on AWS",
+  "icons": [
+    {
+      "sizes": "310x310",
+      "src": "./images/mstile-310x310.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "150x150",
+      "src": "./images/mstile-150x150.png",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "background_color": "#009688",
+  "theme_color": "#009688"
+}
