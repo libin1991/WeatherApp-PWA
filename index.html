@@ -1,118 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
 
-    <head>
-        <meta charset="utf-8">
-        <link href="/WeatherApp-PWA/favicon.ico" rel="shortcut icon">
-        <meta content="width=device-width,initial-scale=1" name="viewport">
-        <meta content="#000000" name="theme-color">
-        <link href="/WeatherApp-PWA/manifest.json" rel="manifest">
-        <link href="/WeatherApp-PWA/apple-touch-icon-57x57.png" rel="apple-touch-icon-precomposed" sizes="57x57">
-        <link href="/WeatherApp-PWA/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114">
-        <link href="/WeatherApp-PWA/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72">
-        <link href="/WeatherApp-PWA/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144">
-        <link href="/WeatherApp-PWA/apple-touch-icon-60x60.png" rel="apple-touch-icon-precomposed" sizes="60x60">
-        <link href="/WeatherApp-PWA/apple-touch-icon-120x120.png" rel="apple-touch-icon-precomposed" sizes="120x120">
-        <link href="/WeatherApp-PWA/apple-touch-icon-76x76.png" rel="apple-touch-icon-precomposed" sizes="76x76">
-        <link href="/WeatherApp-PWA/apple-touch-icon-152x152.png" rel="apple-touch-icon-precomposed" sizes="152x152">
-        <link href="/WeatherApp-PWA/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png">
-        <link href="/WeatherApp-PWA/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
-        <link href="/WeatherApp-PWA/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-        <link href="/WeatherApp-PWA/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-        <link href="/WeatherApp-PWA/favicon-128.png" rel="icon" sizes="128x128" type="image/png">
-        <meta content="" name="application-name">
-        <meta content="#FFFFFF" name="msapplication-TileColor">
-        <meta content="mstile-144x144.png" name="msapplication-TileImage">
-        <meta content="mstile-70x70.png" name="msapplication-square70x70logo">
-        <meta content="mstile-150x150.png" name="msapplication-square150x150logo">
-        <meta content="mstile-310x150.png" name="msapplication-wide310x150logo">
-        <meta content="mstile-310x310.png" name="msapplication-square310x310logo">
-        <meta content="A simple weather PWA" name="Description">
-        <title>Weather App</title>
+    <title>Serverless React PWA on AWS</title>
 
-        <style data-emotion="css">
-        .css-2b097c-container {
-            position: relative;
-            box-sizing: border-box
-        }
+    <meta name="author" content="Gianluca Casati">
+    <meta name="description" content="How to create a serverless Progressive Web App, using React, Redux, React Router, TypeScript on frontend and AWS Lambda, Cloudfront, Amazon SES, API Gateway for a zero maintenance required backend.">
 
-        .css-yk16xz-control {
-            -webkit-box-align: center;
-            align-items: center;
-            background-color: #fff;
-            border-color: #ccc;
-            border-radius: 4px;
-            border-style: solid;
-            border-width: 1px;
-            cursor: default;
-            display: flex;
-            flex-wrap: wrap;
-            -webkit-box-pack: justify;
-            justify-content: space-between;
-            min-height: 38px;
-            position: relative;
-            transition: all .1s ease 0s;
-            box-sizing: border-box;
-            outline: 0 !important
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .css-yk16xz-control:hover {
-            border-color: #b3b3b3
-        }
+    <meta name="theme-color" content="#eeeeee">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#eeeeee">
 
-        .css-1hwfws3 {
-            -webkit-box-align: center;
-            align-items: center;
-            display: flex;
-            flex: 1 1 0%;
-            flex-wrap: wrap;
-            padding: 2px 8px;
-            position: relative;
-            overflow: hidden;
-            box-sizing: border-box
-        }
+    <link rel="manifest" href="manifest.json">
 
-        .css-1uccc91-singleValue {
-            color: #333;
-            margin-left: 2px;
-            margin-right: 2px;
-            max-width: calc(100% - 8px);
-            overflow: hidden;
-            position: absolute;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            top: 50%;
-            transform: translateY(-50%);
-            box-sizing: border-box
-        }
+    <meta name="apple-mobile-web-app-title" content="React PWA">
+    <meta name="application-name" content="React PWA">
 
-        .css-1g6gooi {
-            margin: 2px;
-            padding-bottom: 2px;
-            padding-top: 2px;
-            visibility: visible;
-            color: #333;
-            box-sizing: border-box
-        }
+    <style>
+      html {
+        color: #333333;
+        font-family: "Lucida Console", Monaco, monospace;
+      }
 
-        .css-1wy0on6 {
-            -webkit-box-align: center;
-            align-items: center;
-            align-self: stretch;
-            display: flex;
-            flex-shrink: 0;
-            box-sizing: border-box
-        }
+      body {
+        background-color: #eeeeee;
+      }
+
+      noscript {
+        color: magenta;
+        text-align: center;
+        font-size: 5vh;
+      }
     </style>
 
-    </head>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-    <body><noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root">
-            测试123
-        </div>
-        <script>!function (l) { function e(e) { for (var r, t, n = e[0], o = e[1], u = e[2], f = 0, i = []; f < n.length; f++)t = n[f], p[t] && i.push(p[t][0]), p[t] = 0; for (r in o) Object.prototype.hasOwnProperty.call(o, r) && (l[r] = o[r]); for (s && s(e); i.length;)i.shift()(); return c.push.apply(c, u || []), a() } function a() { for (var e, r = 0; r < c.length; r++) { for (var t = c[r], n = !0, o = 1; o < t.length; o++) { var u = t[o]; 0 !== p[u] && (n = !1) } n && (c.splice(r--, 1), e = f(f.s = t[0])) } return e } var t = {}, p = { 1: 0 }, c = []; function f(e) { if (t[e]) return t[e].exports; var r = t[e] = { i: e, l: !1, exports: {} }; return l[e].call(r.exports, r, r.exports, f), r.l = !0, r.exports } f.m = l, f.c = t, f.d = function (e, r, t) { f.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: t }) }, f.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, f.t = function (r, e) { if (1 & e && (r = f(r)), 8 & e) return r; if (4 & e && "object" == typeof r && r && r.__esModule) return r; var t = Object.create(null); if (f.r(t), Object.defineProperty(t, "default", { enumerable: !0, value: r }), 2 & e && "string" != typeof r) for (var n in r) f.d(t, n, function (e) { return r[e] }.bind(null, n)); return t }, f.n = function (e) { var r = e && e.__esModule ? function () { return e.default } : function () { return e }; return f.d(r, "a", r), r }, f.o = function (e, r) { return Object.prototype.hasOwnProperty.call(e, r) }, f.p = "/WeatherApp-PWA/"; var r = window.webpackJsonp = window.webpackJsonp || [], n = r.push.bind(r); r.push = e, r = r.slice(); for (var o = 0; o < r.length; o++)e(r[o]); var s = n; a() }([])</script>
+  <body>
+    <h1>Serverless React PWA on AWS</h1>
 
-    </body>
+    <noscript>
+      <p>Opsss... your JavaScript looks disabled 😒</p>
+    </noscript>
 
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('cache.js', { scope: '/' })
+        })
+      }
+    </script>
+  </body>
 </html>
