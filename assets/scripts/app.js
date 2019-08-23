@@ -2,7 +2,9 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
         .register('./service-worker.js')
-        .then(function() { console.log('Service Worker Registered'); });
+        .then(reg => console.log('ServiceWorker registered', reg))
+        .then(function () { console.log('Service Worker Registered'); })
+        .catch(error => console.log('ServiceWorker not registered', error));;
 }
 //--------------
 
@@ -20,10 +22,10 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt = e;
     btnInstall.removeAttribute("hidden");
 });
-btnInstall.addEventListener("click", function() {
+btnInstall.addEventListener("click", function () {
     btnInstall.setAttribute("hidden", ""),
         deferredPrompt.prompt(),
-        deferredPrompt.userChoice.then(function(t) {
+        deferredPrompt.userChoice.then(function (t) {
             if ("accepted" === t.outcome) {
                 console.log("User accepted the A2HS prompt")
             } else {
@@ -43,7 +45,7 @@ btnInstall.addEventListener("click", function() {
 
 
 function askForNotificationPermission() {
-    Notification.requestPermission(function(result) {
+    Notification.requestPermission(function (result) {
         console.log('User Choice', result);
         if (result !== 'granted') {
             console.log('No notification permission granted!');
@@ -65,6 +67,8 @@ function displayConfirmationNotification() {
         registeration.showNotification("Happy Birthday! MS Dhoni", options);
     });
 }
+
+
 if ('Notification' in window) {
     console.log('Notification suppported!');
 
